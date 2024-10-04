@@ -11,7 +11,7 @@ public class FullNameParser {
         System.out.println("What should I call you?\n");
 
         // Prompt for FULL NAME & use .trim()
-        System.out.print("Enter your full name as *first middle last*): ");
+        System.out.print("Enter your full name as (First Middle Last) or (First Last): ");
         String fullNameInput = scanner.nextLine().trim();
 
 
@@ -30,10 +30,18 @@ public class FullNameParser {
         // Display pieces of the name
         System.out.println("First Name: " + firstName);
 
-        if (!middleName.isEmpty()) {
-            System.out.println("Middle Name: " + middleName);
+        if (nameParts.length == 2) {
+            firstName = nameParts[0];
+            middleName = "";
+            lastName = nameParts[1];
+        }
+        if (nameParts.length == 3) {
+            firstName = nameParts[0];
+            middleName = nameParts[1];
+            lastName = nameParts[2];
         }
 
+        System.out.println("Middle Name:" + middleName);
         System.out.println("Last Name: " + lastName);
 
         //Lights out
