@@ -3,15 +3,16 @@ package com.pluralsight.name;
 import java.util.Scanner;
 
 public class FullNameGenerator {
-
+    //Declare scanner
     static Scanner scanley;
 
+    //Method for prompting
     public static String getUserInputWithPrompt(String prompt) {
         System.out.print(prompt);
         return scanley.nextLine();
     }
     public static void main(String[] args){
-
+        //Call scanner
         scanley = new Scanner(System.in);
 
         //Talk to the user
@@ -22,7 +23,7 @@ public class FullNameGenerator {
         String firstName = getUserInputWithPrompt("What is your first name? ");
         StringBuilder fullName = new StringBuilder(firstName);
 
-        // Add MIDDLE NAME if the user has one
+        // Add MIDDLE NAME "if" the user has one
         String middleName = getUserInputWithPrompt("What is your middle name? ");
         if (!middleName.isBlank()) {
             fullName.append(" ").append(middleName);
@@ -32,7 +33,7 @@ public class FullNameGenerator {
         String lastName = getUserInputWithPrompt("What is your last name? ");
         fullName.append(" ").append(lastName);
 
-        // SUFFIX if they have one
+        // SUFFIX "if" they have one
         String suffix = getUserInputWithPrompt("What is your suffix name? ");
         if (!suffix.isBlank()) {
             fullName.append(", ").append(suffix).append(".");

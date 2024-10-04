@@ -15,13 +15,13 @@ public class FullNameParser {
         String fullNameInput = scanner.nextLine().trim();
 
 
-        // SPLIT the user input using .split(\\s)
-        // Make it (\\s+) to add spacing
-        String[] nameParts = fullNameInput.split("\\s+");
+        // SPLIT the user input using " "
+        String[] nameParts = fullNameInput.split(" ");
 
 
-        // Break down and check parts of the name
+        // Break down AND check parts of the name
         String firstName = nameParts[0];
+
         String lastName = nameParts[nameParts.length - 1];
 
         String middleName = nameParts.length == 3 ? nameParts[1] : "";
