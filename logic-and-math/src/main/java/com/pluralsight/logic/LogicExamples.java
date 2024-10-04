@@ -10,8 +10,8 @@ public class LogicExamples {
 
         area = (double) 10 / 3;         //  fp division
 
-        System.out.println( area );       // What value prints here?
-        System.out.println( remainder );  // What value prints here?
+        System.out.println(area);       // What value prints here?
+        System.out.println(remainder);  // What value prints here?
 
         // Arithmetic operators
         //  +  -  /  *  %
@@ -23,12 +23,12 @@ public class LogicExamples {
         area = area + 1;   // simple addition to increment
         System.out.println(area);  // what value prints here?
 
-        area ++;    // postfix increment
+        area++;    // postfix increment
         System.out.println(area);     // What value prints here?
 
-        System.out.println(++ area);  // what value prints here?
+        System.out.println(++area);  // what value prints here?
 
-        System.out.println(++ area + area ++ + remainder ++);  // what value prints here?
+        System.out.println(++area + area++ + remainder++);  // what value prints here?
 
         System.out.println(area);       // what value prints here?
         System.out.println(remainder);  // what value prints here?
@@ -54,19 +54,19 @@ public class LogicExamples {
         int counter = 0;
         do {
             System.out.println("talking.... words...");
-            if ( counter++ == 5 ) done = true;
-        } while( ! done);
+            if (counter++ == 5) done = true;
+        } while (!done);
         System.out.println(counter);
 
         // WHILE loop executes 0 or more times
-        counter =0;
-        while(counter != 5){
+        counter = 0;
+        while (counter != 5) {
             System.out.println("talking.... words...");
-            counter ++;
+            counter++;
         }
 
         // FOR loop executes 0 or more times
-        for (int i=0; i<5; i++){
+        for (int i = 0; i < 5; i++) {
             System.out.println("Talking...");
         }
 
