@@ -1,79 +1,87 @@
 package com.pluralsight.library;
 
-import java.util.Scanner;
 public class Book {
-    //Instance variables
-    private int id;
-    private String isbn;
-    private String title;
-    private boolean isCheckedOut;
-    private String isCheckedOutTo;
 
-    //Constructor to initialize instance variables
-    public Book (int id, String isbn, String title, boolean isCheckedOut, String isCheckedOutTo) {
+    //Instance variables
+    private int id = 0;
+    private String isbn = "";
+    private String title = "";
+    private String checkedOutTo = "";
+    private boolean isCheckedOut = false;
+
+    //Constructor
+    public Book(int id, String isbn, String title, String checkedOutTo, boolean isCheckedOut){
         this.id = id;
         this.isbn = isbn;
         this.title = title;
+        this.checkedOutTo = checkedOutTo;
         this.isCheckedOut = isCheckedOut;
-        this.isCheckedOutTo =  isCheckedOutTo;
-
     }
 
-    //create the checkOut (name) method
+    public Book(){
+        this.id = id;
+        this.isbn = isbn;
+        this.title = title;
+        this.checkedOutTo = checkedOutTo;
+        this.isCheckedOut = isCheckedOut;
+    }
 
-    //create the checkIn() method
+    // Getters & Setters
+    public int getId() {
+        return this.id;
+    }
 
-    //the books checkedOutTo variable should be set to the name provided
-    //Import scanner and take name
-    //the isCheckedOut variable should be set to true
+    public void setId(int id) {
+        this.id = id;
+    }
 
-    //the books checkedOutTo variable should be set to ""
-    //the isCheckedOut variable should be set to false
+    public String getIsbn() {
+        return this.isbn;
+    }
 
-    //use an array to hold an inventory of at least 20 books
-    //arrays should be declared as instance variables/fields
+    public void setIsbn(String isbn) {
+        this.isbn = isbn;
+    }
 
-    public static void main(String[] args) {
-        Scanner scanley = new Scanner(System.in);
-        int choice;
+    public String getTitle() {
+        return this.title;
+    }
 
-        // Make home screen: show available books, show checked-out books, check-in a book, exit
-        System.out.println("Please select one of the following options to proceed:");
-        System.out.println("1. Show available books");
-        System.out.println("2. Show checked-out books)");
-        System.out.println("3. Check-in a book");
-        System.out.println("4. Exit");
-        System.out.print("Select Options 1 - 4: ");
-        choice = scanley.nextInt();
+    public void setTitle(String title) {
+        this.title = title;
+    }
 
-        switch (choice) {
-            case 1 -> { //Show available books and allow for check-out
-            }
+    public String getCheckedOutTo() {
+        return this.checkedOutTo;
+    }
 
+    public void setCheckedOutTo(String checkedOutTo) {
+        this.checkedOutTo = checkedOutTo;
+    }
 
-            case 2 -> { //Show checked-out books
+    public boolean getIsCheckedOut() {
+        return this.isCheckedOut;
+    }
 
-            }
+    public void setCheckedOut(boolean checkedOut) {
+        this.isCheckedOut = checkedOut;
+    }
 
-            case 3 -> { //Check-in a book books
+    //Methods
+    public String toString() {
+        return "ID: " + this.id + "      ISBN: " + this.isbn + "      Title: " + this.title;
+    }
 
-
-            }
+        // Check-out
+        public void checkOut(String name){
+            isCheckedOut = true;
+            checkedOutTo = name;
         }
 
-        // Show available books: display a list of all books not currently checked out.
-        //Display the id, isbn, and title
-        //Prompt user to either selected a book to check out or exit to go back to home screen
-        //If the user wants to check out a book, prompt them for their name and check out the book
-
-        //Show checked out books: show list of books currently checked out.
-        //Display the id, isbn, and title
-        //C - to Check In a book
-        //X - to go back to the home screen
-
-        //Check In a book: prompt the user for the id of the book they want to check in
-        //Check-in the book with the specified id
-        //X - to go back to the home screen
-
+        // Check-in
+        public void checkIn() {
+            isCheckedOut = false;
+            checkedOutTo = "";
+        }
     }
-}
+
